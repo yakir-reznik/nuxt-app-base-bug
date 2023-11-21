@@ -1,7 +1,7 @@
 # This repo has been made to reproduce a bug with app.baseURL in nuxt version 3.3.8
 
 ## Bug description
-When a value is set to **app.baseURL** option in **nuxt.config.ts** routes whose filename start with the app.base throw an error when running *npm run generate* command.
+When a value is set to **app.baseURL** option in **nuxt.config.ts** routes whose filename start with the app.baseURL throw an error when running *npm run generate* command.
 
 ## Example
 ```bash
@@ -13,16 +13,9 @@ export default defineNuxtConfig({
 })
 ```
 
-```bash
-// /pages/some-folder-page.vue
-export default defineNuxtConfig({
-  app: {
-    baseURL: "/some-folder/"
-  }
-})
-```
+Assume there is a file in **/pages/some-folder-page.vue
 
-When i run *"npm run generate"* i get this error (also attaching image): 
+When you run *"npm run generate"* you will get this error (also attaching image): 
 ```bash
 Errors prerendering:
   ├─ /some-folder-page (56ms)
