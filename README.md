@@ -29,7 +29,7 @@ Errors prerendering:
   │ └── Error: [404] Cannot find any route matching -page.
 ```
 
-![screenshot](https://pasteboard.co/96FKr8Io6vvv.png)
+![screenshot](/public/screenshot.png)
 
 ## Additional notes
 I have also tried defining the **app.baseURL** with and without slashes like "/value", "value/", "/value/" & "value".
