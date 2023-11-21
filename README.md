@@ -7,18 +7,18 @@ When a value is set to **app.baseURL** option in **nuxt.config.ts** routes whose
 ```bash
 // nuxt.config.ts
 export default defineNuxtConfig({
-	app: {
-		baseURL: "/some-folder/"
-	}
+  app: {
+    baseURL: "/some-folder/"
+  }
 })
 ```
 
 ```bash
 // /pages/some-folder-page.vue
 export default defineNuxtConfig({
-	app: {
-		baseURL: "/some-folder/"
-	}
+  app: {
+    baseURL: "/some-folder/"
+  }
 })
 ```
 
