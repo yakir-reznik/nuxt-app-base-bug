@@ -7,5 +7,4 @@
 		the route filename starts with same string as the <i>app.baseURL</i> in
 		<i>nuxt.config.ts ('/some-folder/')</i>
 	</p>
-	<p></p>
 </template>

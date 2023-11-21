@@ -1,75 +1,38 @@
-# Nuxt 3 Minimal Starter
+# This repo has been made to reproduce a bug with app.baseURL in nuxt version 3.3.8
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Bug description
+When a value is set to **app.baseURL** option in **nuxt.config.ts** routes whose filename start with the app.base throw an error when running *npm run generate* command.
 
-## Setup
-
-Make sure to install the dependencies:
-
+## Example
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+// nuxt.config.ts
+export default defineNuxtConfig({
+	app: {
+		baseURL: "/some-folder/"
+	}
+})
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+// /pages/some-folder-page.vue
+export default defineNuxtConfig({
+	app: {
+		baseURL: "/some-folder/"
+	}
+})
 ```
 
-## Production
-
-Build the application for production:
-
+When i run *"npm run generate"* i get this error (also attaching image): 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+Errors prerendering:
+  ├─ /some-folder-page (56ms)
+  │ └── Error: [404] Cannot find any route matching -page.
 ```
 
-Locally preview production build:
+![screenshot](https://pasteboard.co/96FKr8Io6vvv.png)
 
-```bash
-# npm
-npm run preview
+## Additional notes
+I have also tried defining the **app.baseURL** with and without slashes like "/value", "value/", "/value/" & "value".
+The error happens in all cases.
 
-# pnpm
-pnpm run preview
 
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
